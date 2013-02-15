@@ -54,7 +54,7 @@ CASE 1:
 	165c165
 	< // if padchar == '\t', the Writer will assume ...
 	---
-> // if padchar != '\t', the Writer will assume ...
+	> // if padchar != '\t', the Writer will assume ...
 
 This is commented out code. It has no functionality. This is not a big problem. Mutant.pl does not recognize comments, so no big deal.
 
@@ -64,7 +64,7 @@ CASE 3:
 	216c216
 	<       if n != len(buf) && err == nil {
 	---
->       if n != len(buf) && err != nil {
+	>       if n != len(buf) && err != nil {
 
 This gets more interesting. There is no test case that checks 'err'!
 
@@ -74,7 +74,7 @@ CASE 9:
 	415c415
 	<  if b.flags&StripEscape == 0 {
 	---
->  if b.flags&StripEscape != 0 { 
+	>  if b.flags&StripEscape != 0 { 
 
 Another interesting case. There is obviously no test case that checks the flag StripEscape.
 
