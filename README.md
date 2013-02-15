@@ -81,6 +81,6 @@ Another interesting case. There is obviously no test case that checks the flag S
 
 I originally planned to propose two test cases for these deficiencies, but I haven't looked into it yet. Since there is no check for these particular cases, I don't even know if the original code is correct!
 
-So, using a fairly primitive technique - I could easily come up with a whole bunch of other more intricate modifications (cycle through the various comparisons, add 1 or 0 to any computation, change + to -, and so on) - I found two potential problems in the tests, perhaps even the code.
+So, using a fairly primitive technique - I could easily come up with a whole bunch of other more intricate modifications (cycle through the various comparisons, add 1 to any computation, change + to -, and so on) - I found two potential problems in the tests, perhaps even the code.
 
 Perhaps it's possible to create a framework for Go to apply patterns of errors to packages, and produce some nicely formatted HTML output to report the problems. This would allow developers to enhance the quality and robustness of Go's tests and this would be of benefit for everyone involved. Thanks for reading. Please leave a comment.
