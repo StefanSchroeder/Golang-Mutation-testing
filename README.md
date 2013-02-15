@@ -2,6 +2,9 @@
 Adventures in Golang: Mutation testing in Go
 ============================================
 
+What is Error Seeding/Mutation testing?
+---------------------------------------
+
 I always thought that error seeding and mutation testing are a cool idea. You intentionally introduce an error into your source code and see what happens when you run your tests. The theory behind error seeding also claims to be able to predict the total number of errors in a body of code, but I am interested for another reason. Error seeding allows me to enhance the coverage and quality of my unit tests.
 
 The plan works like this:
@@ -19,9 +22,18 @@ But another problem persists. If you re-compile a substantial body of code writt
 
 Thus, error seeding as a concept is dropped.
 
+
+Why Go?
+-------
+
 Enter Go. The quick compilation, lean syntax, and excellent test framework out-of-the-box make error seeding suddenly a feasible strategy.
 
 I haven't spoken about the mechanics of error seeding yet. I want to do this by way of example. In this example, I am using a Perl script to change one '==' comparison for equality with a '!=' test for inequality. I would have preferred to have a Go-only version for this text, but I don't know enough about the parser to write this error-seeder on a low-level, and Perl is always a good fit when manipulating text.
+
+
+Applying it to 'tabwriter'
+--------------------------
+
 
 Next, I need a package as a victim. I chose a harmless package from the standard library: 'tabwriter'. It has only one source file 'tabwriter.go' and one test file 'tabwriter_test.go'. I renamed the package to 'mytabwriter' in all these two files and copied them to a temporary folder (to avoid namespace collision with the original files).
 
@@ -80,6 +92,11 @@ CASE 9:
 Another interesting case. There is obviously no test case that checks the flag StripEscape.
 
 I originally planned to propose two test cases for these deficiencies, but I haven't looked into it yet. Since there is no check for these particular cases, I don't even know if the original code is correct!
+
+
+Conclusion
+-----------
+
 
 So, using a fairly primitive technique - I could easily come up with a whole bunch of other more intricate modifications (cycle through the various comparisons, add 1 to any computation, change + to -, and so on) - I found two potential problems in the tests, perhaps even the code.
 
