@@ -23,10 +23,10 @@ But another problem persists. If you re-compile a substantial body of code writt
 Thus, error seeding as a concept is dropped.
 
 
-Why Go?
--------
+Enter Go
+--------
 
-Enter Go. The quick compilation, lean syntax, and excellent test framework out-of-the-box make error seeding suddenly a feasible strategy.
+The quick compilation, lean syntax, and excellent test framework out-of-the-box make error seeding suddenly a feasible strategy.
 
 I haven't spoken about the mechanics of error seeding yet. I want to do this by way of example. In this example, I am using a Perl script to change one '==' comparison for equality with a '!=' test for inequality. I would have preferred to have a Go-only version for this text, but I don't know enough about the parser to write this error-seeder on a low-level, and Perl is always a good fit when manipulating text.
 
