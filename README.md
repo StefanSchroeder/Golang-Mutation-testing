@@ -1,5 +1,5 @@
 
-Adventures in Golang: Mutation testing in Go
+== Adventures in Golang: Mutation testing in Go
 
 I always thought that error seeding and mutation testing are a cool idea. You intentionally introduce an error into your source code and see what happens when you run your tests. The theory behind error seeding also claims to be able to predict the total number of errors in a body of code, but I am interested for another reason. Error seeding allows me to enhance the coverage and quality of my unit tests.
 
@@ -28,23 +28,23 @@ Then I wrote the Perl script 'mutator.pl'. It takes the original mytabwriter sou
 
 I found that tabwriter.go contains sixteen '==' operators. mutator.pl has produced 16 different versions and each has one operator patched. Then the Perl script copies these mutants back and forth and runs the 'go test' command and checks the result. Then the script renames the n'th mutation and appends either OK or FAIL to the filename. The result is the following list:
 
-mytabwriter.go
-mytabwriter.go.1.OK
-mytabwriter.go.2.FAIL
-mytabwriter.go.3.OK
-mytabwriter.go.4.FAIL
-mytabwriter.go.5.FAIL
-mytabwriter.go.6.FAIL
-mytabwriter.go.7.FAIL
-mytabwriter.go.8.FAIL
-mytabwriter.go.9.OK
-mytabwriter.go.10.FAIL
-mytabwriter.go.11.FAIL
-mytabwriter.go.12.FAIL
-mytabwriter.go.13.FAIL
-mytabwriter.go.14.FAIL
-mytabwriter.go.15.FAIL
-mytabwriter.go.16.FAIL
+	mytabwriter.go
+	mytabwriter.go.1.OK
+	mytabwriter.go.2.FAIL
+	mytabwriter.go.3.OK
+	mytabwriter.go.4.FAIL
+	mytabwriter.go.5.FAIL
+	mytabwriter.go.6.FAIL
+	mytabwriter.go.7.FAIL
+	mytabwriter.go.8.FAIL
+	mytabwriter.go.9.OK
+	mytabwriter.go.10.FAIL
+	mytabwriter.go.11.FAIL
+	mytabwriter.go.12.FAIL
+	mytabwriter.go.13.FAIL
+	mytabwriter.go.14.FAIL
+	mytabwriter.go.15.FAIL
+	mytabwriter.go.16.FAIL
 
 This tells me that for the modifications 1, 3 and 9, the 'go test' run did not catch the modification. I examined these particular patches to figure out, why that was the case.
 
