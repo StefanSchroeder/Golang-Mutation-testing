@@ -4,7 +4,7 @@ Adventures in Golang: Mutation testing in Go
 What is Error Seeding/Mutation testing?
 ---------------------------------------
 
-I always thought that error seeding and mutation testing are a cool idea. You intentionally introduce an error into your source code and see what happens when you run your tests. The theory behind error seeding also claims to be able to predict the total number of errors in a body of code, but I am interested for another reason. Error seeding allows me to enhance the coverage and quality of my unit tests.
+I always thought that error seeding and mutation testing are cool ideas. You intentionally introduce errors into your source code and see what happens when you run your tests. The theory behind error seeding also claims to be able to predict the total number of errors in a body of code, but I am interested for another reason. Error seeding allows me to enhance the coverage and quality of my unit tests.
 
 The plan works like this:
 
